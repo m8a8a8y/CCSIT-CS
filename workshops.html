@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Workshops - Tuwaiq Cybersecurity Club</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Roboto+Mono:wght@400;500&family=Tajawal:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body>
+    <!-- Navigation -->
+    <header id="header">
+        <div class="container nav-container">
+            <a href="index.html" class="logo">
+                <img src="images/kfu-cyber-logo.png" alt="KFU Cyber Logo">
+                <div class="logo-text">
+                    <span class="logo-title">TUWAIQ</span>
+                    <span class="logo-subtitle">CYBERSECURITY</span>
+                </div>
+            </a>
+            <button class="mobile-toggle" id="mobileToggle"><i data-lucide="menu"></i></button>
+            <nav class="nav-links" id="navLinks">
+                <a href="index.html" class="nav-link">HOME</a>
+                <a href="bootcamps.html" class="nav-link">BOOTCAMPS</a>
+                <a href="workshops.html" class="nav-link active">WORKSHOPS</a>
+                <a href="team.html" class="nav-link">TEAM</a>
+                <a href="contact.html" class="nav-link">CONTACT</a>
+                <a href="login.html" class="btn btn-primary"><i data-lucide="terminal" style="width: 16px; margin-right: 8px;"></i> MEMBER LOGIN</a>
+            </nav>
+        </div>
+    </header>
+
+    <section class="section" style="padding-top: 120px;">
+        <div class="container">
+            <div style="text-align: center; margin-bottom: 4rem;">
+                <span class="section-subtitle" style="justify-content: center;">Skill Building</span>
+                <h1 class="section-title">WORKSHOPS & <span class="text-primary">EVENTS</span></h1>
+            </div>
+
+            <div class="cards-grid" id="workshopsGrid">
+                <!-- Cards injected via JS -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Modal Template -->
+    <div class="modal" id="detailsModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <div>
+                    <h2 class="modal-title text-primary" id="modalTitle">Title</h2>
+                    <p class="text-muted" id="modalTitleAr" style="font-family: 'Tajawal';">Arabic Title</p>
+                </div>
+                <button class="modal-close" id="modalClose"><i data-lucide="x"></i></button>
+            </div>
+            <div class="modal-body">
+                <img src="" alt="" class="modal-image" id="modalImage">
+                
+                <div style="display: flex; gap: 1rem; margin-bottom: 1.5rem;">
+                    <span class="btn-ghost" style="font-size: 0.875rem;"><i data-lucide="calendar" style="width: 16px; margin-right: 8px;"></i> <span id="modalDate"></span></span>
+                    <span class="btn-ghost" style="font-size: 0.875rem;"><i data-lucide="map-pin" style="width: 16px; margin-right: 8px;"></i> <span id="modalLocation"></span></span>
+                </div>
+
+                <h4 style="margin-bottom: 0.5rem;">About This Event</h4>
+                <p class="text-muted" id="modalDesc" style="margin-bottom: 1.5rem;"></p>
+
+                <div class="modal-grid">
+                    <div>
+                        <h4 style="margin-bottom: 0.5rem;">Agenda</h4>
+                        <ul id="modalAgenda" style="font-size: 0.875rem; color: var(--muted);"></ul>
+                    </div>
+                    <div>
+                        <h4 style="margin-bottom: 0.5rem;">Details</h4>
+                        <ul style="font-size: 0.875rem; color: var(--muted);">
+                            <li><i data-lucide="shield" style="width: 14px; display: inline;"></i> Category: <span id="modalCategory"></span></li>
+                            <li><i data-lucide="users" style="width: 14px; display: inline;"></i> Capacity: <span id="modalAttendees"></span></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-outline" id="modalCloseBtn">Close</button>
+                <a href="#" class="btn btn-primary" id="modalActionBtn">Register Now</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container footer-grid">
+            <div>
+                <div class="logo" style="margin-bottom: 1.5rem;">
+                    <img src="images/kfu-cyber-logo.png" alt="Logo">
+                    <span class="logo-title">TUWAIQ CYBERSECURITY</span>
+                </div>
+                <p class="text-muted">Building the next generation of cybersecurity professionals.</p>
+            </div>
+            <div>
+                <h4 style="margin-bottom: 1.5rem; color: var(--primary);">Quick Links</h4>
+                <ul style="display: flex; flex-direction: column; gap: 0.75rem;">
+                    <li><a href="index.html" class="text-muted">Home</a></li>
+                    <li><a href="bootcamps.html" class="text-muted">Bootcamps</a></li>
+                    <li><a href="workshops.html" class="text-muted">Workshops</a></li>
+                    <li><a href="team.html" class="text-muted">Team</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 style="margin-bottom: 1.5rem; color: var(--primary);">Connect</h4>
+                <div style="display: flex; gap: 1rem;">
+                    <a href="#" class="btn-ghost"><i data-lucide="twitter"></i></a>
+                    <a href="#" class="btn-ghost"><i data-lucide="linkedin"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="container footer-bottom">&copy; 2025 Tuwaiq Cybersecurity Club.</div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script>
+        const workshops = [
+            {
+                id: 1,
+                title: "Network Fundamentals Part 1",
+                titleAr: "أساسيات الشبكات الجزء الأول",
+                date: "October 2025",
+                location: "KFU Campus",
+                image: "images/workshop-bg.jpg",
+                category: "Technical",
+                description: "Focuses on network basics, defining networks, how they work, and TCP/IP operations.",
+                attendees: 50,
+                fullDescription: "This workshop provides a comprehensive introduction to computer networking. Participants will explore the OSI model, understand IP addressing and subnetting.",
+                agenda: ["Introduction to Networks", "OSI & TCP/IP Models", "IP Addressing & Subnetting"],
+                playlistUrl: "https://www.youtube.com/playlist?list=PLXYZ"
+            },
+            {
+                id: 2,
+                title: "Cybersecurity Awareness Exhibition",
+                titleAr: "معرض نبه",
+                date: "October 2025",
+                location: "KFU Campus",
+                image: "images/about-bg.jpg",
+                category: "Awareness",
+                description: "An awareness exhibition during Cybersecurity Awareness Month.",
+                attendees: 200,
+                fullDescription: "Join us for a day of learning and fun at the Cybersecurity Awareness Exhibition. Discover the latest trends in digital safety.",
+                agenda: ["Student Projects Showcase", "Interactive Security Games", "Live Hacking Demos"],
+                playlistUrl: "https://www.youtube.com/playlist?list=PLXYZ"
+            },
+            {
+                id: 3,
+                title: "Introduction to Encryption",
+                titleAr: "مدخل إلى التشفير",
+                date: "November 2025",
+                location: "KFU Campus",
+                image: "images/hero-bg.jpg",
+                category: "Technical",
+                description: "Understanding encryption basics and secrets.",
+                attendees: 20,
+                fullDescription: "Unlock the secrets of cryptography in this technical workshop. We will cover the history of encryption, symmetric vs. asymmetric algorithms.",
+                agenda: ["History of Cryptography", "Symmetric & Asymmetric Encryption", "Hashing Algorithms"],
+                playlistUrl: "https://www.youtube.com/playlist?list=PLXYZ"
+            }
+        ];
+
+        const grid = document.getElementById('workshopsGrid');
+        
+        workshops.forEach(ws => {
+            const card = document.createElement('div');
+            card.className = 'card';
+            card.innerHTML = `
+                <div class="card-image">
+                    <img src="${ws.image}" alt="${ws.title}">
+                    <span class="card-status status-completed">${ws.category}</span>
+                </div>
+                <div class="card-content">
+                    <h3 class="card-title">${ws.title}</h3>
+                    <p class="card-subtitle">${ws.titleAr}</p>
+                    <div class="card-meta">
+                        <div class="meta-item"><i data-lucide="calendar" class="meta-icon"></i> ${ws.date}</div>
+                        <div class="meta-item"><i data-lucide="map-pin" class="meta-icon"></i> ${ws.location}</div>
+                    </div>
+                    <p class="card-desc">${ws.description}</p>
+                    <div class="card-footer">
+                        <button class="btn btn-outline" style="width: 100%;" onclick="openModal(${ws.id})">
+                            DETAILS <i data-lucide="arrow-right" style="width: 16px; margin-left: 8px;"></i>
+                        </button>
+                    </div>
+                </div>
+            `;
+            grid.appendChild(card);
+        });
+
+        lucide.createIcons();
+
+        // Modal Logic
+        const modal = document.getElementById('detailsModal');
+        const closeBtn = document.getElementById('modalClose');
+        const closeBtn2 = document.getElementById('modalCloseBtn');
+
+        function openModal(id) {
+            const ws = workshops.find(w => w.id === id);
+            if (!ws) return;
+
+            document.getElementById('modalTitle').textContent = ws.title;
+            document.getElementById('modalTitleAr').textContent = ws.titleAr;
+            document.getElementById('modalImage').src = ws.image;
+            document.getElementById('modalDate').textContent = ws.date;
+            document.getElementById('modalLocation').textContent = ws.location;
+            document.getElementById('modalDesc').textContent = ws.fullDescription;
+            document.getElementById('modalCategory').textContent = ws.category;
+            document.getElementById('modalAttendees').textContent = ws.attendees;
+
+            const agendaList = document.getElementById('modalAgenda');
+            agendaList.innerHTML = ws.agenda.map(item => `<li><i data-lucide="check-circle" style="width: 14px; display: inline; margin-right: 5px; color: var(--accent);"></i> ${item}</li>`).join('');
+
+            const actionBtn = document.getElementById('modalActionBtn');
+            if (ws.playlistUrl) {
+                actionBtn.innerHTML = '<i data-lucide="play-circle" style="width: 16px; margin-right: 8px;"></i> Watch Recording';
+                actionBtn.href = ws.playlistUrl;
+                actionBtn.className = 'btn';
+                actionBtn.style.backgroundColor = '#dc2626';
+                actionBtn.style.color = '#fff';
+                actionBtn.target = '_blank';
+            } else {
+                actionBtn.textContent = 'Register Now';
+                actionBtn.href = '#';
+                actionBtn.className = 'btn btn-primary';
+                actionBtn.removeAttribute('target');
+            }
+
+            modal.classList.add('open');
+            lucide.createIcons();
+        }
+
+        function closeModal() {
+            modal.classList.remove('open');
+        }
+
+        closeBtn.addEventListener('click', closeModal);
+        closeBtn2.addEventListener('click', closeModal);
+        modal.addEventListener('click', (e) => {
+            if (e.target === modal) closeModal();
+        });
+    </script>
+</body>
+</html>

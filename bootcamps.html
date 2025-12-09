@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bootcamps - Tuwaiq Cybersecurity Club</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Roboto+Mono:wght@400;500&family=Tajawal:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body>
+    <!-- Navigation (Same as index) -->
+    <header id="header">
+        <div class="container nav-container">
+            <a href="index.html" class="logo">
+                <img src="images/kfu-cyber-logo.png" alt="KFU Cyber Logo">
+                <div class="logo-text">
+                    <span class="logo-title">TUWAIQ</span>
+                    <span class="logo-subtitle">CYBERSECURITY</span>
+                </div>
+            </a>
+            <button class="mobile-toggle" id="mobileToggle"><i data-lucide="menu"></i></button>
+            <nav class="nav-links" id="navLinks">
+                <a href="index.html" class="nav-link">HOME</a>
+                <a href="bootcamps.html" class="nav-link active">BOOTCAMPS</a>
+                <a href="workshops.html" class="nav-link">WORKSHOPS</a>
+                <a href="team.html" class="nav-link">TEAM</a>
+                <a href="contact.html" class="nav-link">CONTACT</a>
+                <a href="login.html" class="btn btn-primary"><i data-lucide="terminal" style="width: 16px; margin-right: 8px;"></i> MEMBER LOGIN</a>
+            </nav>
+        </div>
+    </header>
+
+    <section class="section" style="padding-top: 120px;">
+        <div class="container">
+            <div style="text-align: center; margin-bottom: 4rem;">
+                <span class="section-subtitle" style="justify-content: center;">Intensive Training</span>
+                <h1 class="section-title">CYBER <span class="text-primary">BOOTCAMPS</span></h1>
+                <p class="text-muted" style="max-width: 600px; margin: 0 auto;">
+                    Immersive, hands-on training programs designed to take your skills from novice to professional.
+                </p>
+            </div>
+
+            <div class="cards-grid" id="bootcampsGrid">
+                <!-- Cards will be injected via JS -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Modal Template -->
+    <div class="modal" id="detailsModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <div>
+                    <h2 class="modal-title text-primary" id="modalTitle">Title</h2>
+                    <p class="text-muted" id="modalTitleAr" style="font-family: 'Tajawal';">Arabic Title</p>
+                </div>
+                <button class="modal-close" id="modalClose"><i data-lucide="x"></i></button>
+            </div>
+            <div class="modal-body">
+                <img src="" alt="" class="modal-image" id="modalImage">
+                
+                <div style="display: flex; gap: 1rem; margin-bottom: 1.5rem;">
+                    <span class="btn-ghost" style="font-size: 0.875rem;"><i data-lucide="calendar" style="width: 16px; margin-right: 8px;"></i> <span id="modalDate"></span></span>
+                    <span class="btn-ghost" style="font-size: 0.875rem;"><i data-lucide="map-pin" style="width: 16px; margin-right: 8px;"></i> <span id="modalLocation"></span></span>
+                </div>
+
+                <h4 style="margin-bottom: 0.5rem;">Overview</h4>
+                <p class="text-muted" id="modalDesc" style="margin-bottom: 1.5rem;"></p>
+
+                <div class="modal-grid">
+                    <div>
+                        <h4 style="margin-bottom: 0.5rem;">Curriculum</h4>
+                        <ul id="modalTopics" style="font-size: 0.875rem; color: var(--muted);"></ul>
+                    </div>
+                    <div>
+                        <h4 style="margin-bottom: 0.5rem;">Details</h4>
+                        <ul style="font-size: 0.875rem; color: var(--muted);">
+                            <li><i data-lucide="users" style="width: 14px; display: inline;"></i> Capacity: <span id="modalAttendees"></span></li>
+                            <li><i data-lucide="shield" style="width: 14px; display: inline;"></i> Level: All Levels</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-outline" id="modalCloseBtn">Close</button>
+                <a href="#" class="btn btn-primary" id="modalActionBtn">Register Now</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer (Same as index) -->
+    <footer>
+        <div class="container footer-grid">
+            <div>
+                <div class="logo" style="margin-bottom: 1.5rem;">
+                    <img src="images/kfu-cyber-logo.png" alt="Logo">
+                    <span class="logo-title">TUWAIQ CYBERSECURITY</span>
+                </div>
+                <p class="text-muted">Building the next generation of cybersecurity professionals.</p>
+            </div>
+            <div>
+                <h4 style="margin-bottom: 1.5rem; color: var(--primary);">Quick Links</h4>
+                <ul style="display: flex; flex-direction: column; gap: 0.75rem;">
+                    <li><a href="index.html" class="text-muted">Home</a></li>
+                    <li><a href="bootcamps.html" class="text-muted">Bootcamps</a></li>
+                    <li><a href="workshops.html" class="text-muted">Workshops</a></li>
+                    <li><a href="team.html" class="text-muted">Team</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 style="margin-bottom: 1.5rem; color: var(--primary);">Connect</h4>
+                <div style="display: flex; gap: 1rem;">
+                    <a href="#" class="btn-ghost"><i data-lucide="twitter"></i></a>
+                    <a href="#" class="btn-ghost"><i data-lucide="linkedin"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="container footer-bottom">&copy; 2025 Tuwaiq Cybersecurity Club.</div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script>
+        // Bootcamps Data
+        const bootcamps = [
+            {
+                id: 1,
+                title: "Fundamentals of Cybersecurity",
+                titleAr: "معسكر أساسيات الأمن السيبراني",
+                date: "September 2025",
+                location: "KFU Campus",
+                image: "images/hero-bg.jpg",
+                status: "Completed",
+                description: "A training bootcamp targeting computer students interested in cybersecurity.",
+                topics: ["Linux Fundamentals", "Network Security", "Web App Security"],
+                attendees: 140,
+                fullDescription: "This intensive bootcamp is designed to provide a solid foundation in cybersecurity. Participants will learn how to secure Linux systems, understand network protocols, and identify common web vulnerabilities.",
+                playlistUrl: "https://www.youtube.com/playlist?list=PLXYZ"
+            },
+            {
+                id: 2,
+                title: "Web App & Servers Pentesting",
+                titleAr: "اختبار اختراق تطبيقات الويب والخوادم",
+                date: "September 2025",
+                location: "KFU Campus",
+                image: "images/workshop-bg.jpg",
+                status: "Completed",
+                description: "Focuses on developing penetration testing skills and web mechanisms.",
+                topics: ["Pentesting Skills", "Web Mechanisms", "Info Gathering"],
+                attendees: 250,
+                fullDescription: "Dive deep into the world of ethical hacking with this advanced bootcamp. You will learn the methodologies used by professional penetration testers.",
+                playlistUrl: "https://www.youtube.com/playlist?list=PLXYZ"
+            },
+            {
+                id: 3,
+                title: "Bug Bounty Hunter Bootcamp",
+                titleAr: "معسكر صائد الثغرات",
+                date: "October 2025",
+                location: "KFU Campus",
+                image: "images/about-bg.jpg",
+                status: "Completed",
+                description: "A 3-day bootcamp focusing on bug hunting skills.",
+                topics: ["Bug Hunting Skills", "Bounty Fundamentals", "Practical Labs"],
+                attendees: 300,
+                fullDescription: "Turn your hacking skills into a rewarding career. This bootcamp covers the essentials of bug bounty hunting.",
+                playlistUrl: "https://www.youtube.com/playlist?list=PLXYZ"
+            },
+            {
+                id: 4,
+                title: "eJPT Bootcamp",
+                titleAr: "معسكر eJPT",
+                date: "Nov 11, 2025",
+                location: "Remote",
+                image: "images/cyber-shield.png",
+                status: "Upcoming",
+                description: "Professional bootcamp preparing for the eJPT certification.",
+                topics: ["eJPT Prep", "OS Exploitation", "Network Hacking"],
+                attendees: 734,
+                fullDescription: "Prepare for the eLearnSecurity Junior Penetration Tester (eJPT) certification. This comprehensive training covers all exam domains.",
+                playlistUrl: ""
+            }
+        ];
+
+        const grid = document.getElementById('bootcampsGrid');
+        
+        bootcamps.forEach(camp => {
+            const card = document.createElement('div');
+            card.className = 'card';
+            card.innerHTML = `
+                <div class="card-image">
+                    <img src="${camp.image}" alt="${camp.title}">
+                    <span class="card-status ${camp.status === 'Upcoming' ? 'status-upcoming' : 'status-completed'}">${camp.status}</span>
+                </div>
+                <div class="card-content">
+                    <h3 class="card-title">${camp.title}</h3>
+                    <p class="card-subtitle">${camp.titleAr}</p>
+                    <div class="card-meta">
+                        <div class="meta-item"><i data-lucide="calendar" class="meta-icon"></i> ${camp.date}</div>
+                        <div class="meta-item"><i data-lucide="map-pin" class="meta-icon"></i> ${camp.location}</div>
+                    </div>
+                    <p class="card-desc">${camp.description}</p>
+                    <div class="card-footer">
+                        <button class="btn btn-outline" style="width: 100%;" onclick="openModal(${camp.id})">
+                            VIEW DETAILS <i data-lucide="arrow-right" style="width: 16px; margin-left: 8px;"></i>
+                        </button>
+                    </div>
+                </div>
+            `;
+            grid.appendChild(card);
+        });
+
+        lucide.createIcons();
+
+        // Modal Logic
+        const modal = document.getElementById('detailsModal');
+        const closeBtn = document.getElementById('modalClose');
+        const closeBtn2 = document.getElementById('modalCloseBtn');
+
+        function openModal(id) {
+            const camp = bootcamps.find(c => c.id === id);
+            if (!camp) return;
+
+            document.getElementById('modalTitle').textContent = camp.title;
+            document.getElementById('modalTitleAr').textContent = camp.titleAr;
+            document.getElementById('modalImage').src = camp.image;
+            document.getElementById('modalDate').textContent = camp.date;
+            document.getElementById('modalLocation').textContent = camp.location;
+            document.getElementById('modalDesc').textContent = camp.fullDescription;
+            document.getElementById('modalAttendees').textContent = camp.attendees;
+
+            const topicsList = document.getElementById('modalTopics');
+            topicsList.innerHTML = camp.topics.map(t => `<li><i data-lucide="check-circle" style="width: 14px; display: inline; margin-right: 5px; color: var(--accent);"></i> ${t}</li>`).join('');
+
+            const actionBtn = document.getElementById('modalActionBtn');
+            if (camp.status === 'Upcoming') {
+                actionBtn.textContent = 'Register Now';
+                actionBtn.href = '#';
+                actionBtn.className = 'btn btn-primary';
+                actionBtn.removeAttribute('target');
+            } else if (camp.playlistUrl) {
+                actionBtn.innerHTML = '<i data-lucide="play-circle" style="width: 16px; margin-right: 8px;"></i> Watch Recording';
+                actionBtn.href = camp.playlistUrl;
+                actionBtn.className = 'btn';
+                actionBtn.style.backgroundColor = '#dc2626';
+                actionBtn.style.color = '#fff';
+                actionBtn.target = '_blank';
+            } else {
+                actionBtn.textContent = 'Registration Closed';
+                actionBtn.href = '#';
+                actionBtn.className = 'btn btn-ghost';
+                actionBtn.style.pointerEvents = 'none';
+                actionBtn.removeAttribute('target');
+            }
+
+            modal.classList.add('open');
+            lucide.createIcons();
+        }
+
+        function closeModal() {
+            modal.classList.remove('open');
+        }
+
+        closeBtn.addEventListener('click', closeModal);
+        closeBtn2.addEventListener('click', closeModal);
+        modal.addEventListener('click', (e) => {
+            if (e.target === modal) closeModal();
+        });
+    </script>
+</body>
+</html>

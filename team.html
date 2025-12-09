@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Team - Tuwaiq Cybersecurity Club</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Roboto+Mono:wght@400;500&family=Tajawal:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body>
+    <!-- Navigation -->
+    <header id="header">
+        <div class="container nav-container">
+            <a href="index.html" class="logo">
+                <img src="images/kfu-cyber-logo.png" alt="KFU Cyber Logo">
+                <div class="logo-text">
+                    <span class="logo-title">TUWAIQ</span>
+                    <span class="logo-subtitle">CYBERSECURITY</span>
+                </div>
+            </a>
+            <button class="mobile-toggle" id="mobileToggle"><i data-lucide="menu"></i></button>
+            <nav class="nav-links" id="navLinks">
+                <a href="index.html" class="nav-link">HOME</a>
+                <a href="bootcamps.html" class="nav-link">BOOTCAMPS</a>
+                <a href="workshops.html" class="nav-link">WORKSHOPS</a>
+                <a href="team.html" class="nav-link active">TEAM</a>
+                <a href="contact.html" class="nav-link">CONTACT</a>
+                <a href="login.html" class="btn btn-primary"><i data-lucide="terminal" style="width: 16px; margin-right: 8px;"></i> MEMBER LOGIN</a>
+            </nav>
+        </div>
+    </header>
+
+    <section class="section" style="padding-top: 120px;">
+        <div class="container">
+            <div style="text-align: center; margin-bottom: 4rem;">
+                <span class="section-subtitle" style="justify-content: center;">Leadership</span>
+                <h1 class="section-title">MEET THE <span class="text-primary">ELITE</span></h1>
+                <p class="text-muted" style="max-width: 600px; margin: 0 auto;">
+                    The visionaries and experts driving the future of cybersecurity at KFU.
+                </p>
+            </div>
+
+            <div class="cards-grid" id="teamGrid">
+                <!-- Team members injected via JS -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container footer-grid">
+            <div>
+                <div class="logo" style="margin-bottom: 1.5rem;">
+                    <img src="images/kfu-cyber-logo.png" alt="Logo">
+                    <span class="logo-title">TUWAIQ CYBERSECURITY</span>
+                </div>
+                <p class="text-muted">Building the next generation of cybersecurity professionals.</p>
+            </div>
+            <div>
+                <h4 style="margin-bottom: 1.5rem; color: var(--primary);">Quick Links</h4>
+                <ul style="display: flex; flex-direction: column; gap: 0.75rem;">
+                    <li><a href="index.html" class="text-muted">Home</a></li>
+                    <li><a href="bootcamps.html" class="text-muted">Bootcamps</a></li>
+                    <li><a href="workshops.html" class="text-muted">Workshops</a></li>
+                    <li><a href="team.html" class="text-muted">Team</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 style="margin-bottom: 1.5rem; color: var(--primary);">Connect</h4>
+                <div style="display: flex; gap: 1rem;">
+                    <a href="#" class="btn-ghost"><i data-lucide="twitter"></i></a>
+                    <a href="#" class="btn-ghost"><i data-lucide="linkedin"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="container footer-bottom">&copy; 2025 Tuwaiq Cybersecurity Club.</div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script>
+        const team = [
+            {
+                name: "Dr. Al-Hanouf Al-Mutairi",
+                role: "Club Supervisor",
+                roleAr: "مشرفة النادي",
+                image: "images/hero-bg.jpg" // Placeholder
+            },
+            {
+                name: "Muhammad Abu Yahya Al-Humaidi",
+                role: "Club Leader",
+                roleAr: "قائد النادي",
+                image: "images/hero-bg.jpg"
+            },
+            {
+                name: "Munira Al-Humaidi",
+                role: "Vice Leader",
+                roleAr: "نائبة القائد",
+                image: "images/hero-bg.jpg"
+            },
+            {
+                name: "Khalid Abbad",
+                role: "Head of VulnOps",
+                roleAr: "رئيس قسم VulnOps",
+                image: "images/hero-bg.jpg"
+            },
+            {
+                name: "Bayan Al-Qahtani",
+                role: "Head of CyberHub",
+                roleAr: "رئيسة قسم CyberHub",
+                image: "images/hero-bg.jpg"
+            },
+            {
+                name: "Ryan Al-Mulhim",
+                role: "Head of Media Affairs",
+                roleAr: "رئيس اللجنة الإعلامية",
+                image: "images/hero-bg.jpg"
+            },
+            {
+                name: "Dana Al-Gharib",
+                role: "Head of Financial Affairs",
+                roleAr: "رئيسة اللجنة المالية",
+                image: "images/hero-bg.jpg"
+            },
+            {
+                name: "Ibrahim Al-Nuaim",
+                role: "Head of Cybersecurity",
+                roleAr: "رئيس قسم الأمن السيبراني",
+                image: "images/hero-bg.jpg"
+            }
+        ];
+
+        const grid = document.getElementById('teamGrid');
+        
+        team.forEach(member => {
+            const card = document.createElement('div');
+            card.className = 'card';
+            card.style.textAlign = 'center';
+            card.innerHTML = `
+                <div class="card-image" style="height: 15rem;">
+                    <img src="${member.image}" alt="${member.name}">
+                </div>
+                <div class="card-content">
+                    <h3 class="card-title" style="font-size: 1.125rem;">${member.name}</h3>
+                    <p class="text-primary" style="font-weight: 700; margin-bottom: 0.25rem;">${member.role}</p>
+                    <p class="text-muted" style="font-family: 'Tajawal'; font-size: 0.875rem;">${member.roleAr}</p>
+                </div>
+            `;
+            grid.appendChild(card);
+        });
+
+        lucide.createIcons();
+    </script>
+</body>
+</html>
