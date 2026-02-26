@@ -1,0 +1,35 @@
+version: '3'
+
+services:
+  low-challenge:
+    build: ./low
+    container_name: cyberclub_low
+    ports:
+      - "2221:22"
+      - "2121:21"
+      - "21100-21110:21100-21110"
+    restart: always
+    networks:
+      - cyber_net
+
+  mid-challenge:
+    build: ./mid
+    container_name: cyberclub_mid
+    ports:
+      - "8082:80"
+    restart: always
+    networks:
+      - cyber_net
+
+  high-challenge:
+    build: ./high
+    container_name: cyberclub_high
+    ports:
+      - "8083:5000"
+    restart: always
+    networks:
+      - cyber_net
+
+networks:
+  cyber_net:
+    driver: bridge

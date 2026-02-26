@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Labs - Tuwaiq Cybersecurity Club</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Roboto+Mono:wght@400;500&family=Tajawal:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        .lab-card {
+            background: rgba(15, 23, 42, 0.6);
+            border: 1px solid rgba(0, 224, 255, 0.2);
+            padding: 2rem;
+            border-radius: 1rem;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        .lab-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--primary);
+            box-shadow: 0 0 20px rgba(0, 224, 255, 0.1);
+        }
+        .lab-badge {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            padding: 0.25rem 0.75rem;
+            border-radius: 999px;
+            font-size: 0.75rem;
+            font-weight: bold;
+            text-transform: uppercase;
+        }
+        .badge-low { background: rgba(34, 197, 94, 0.2); color: #22c55e; border: 1px solid rgba(34, 197, 94, 0.5); }
+        .badge-mid { background: rgba(234, 179, 8, 0.2); color: #eab308; border: 1px solid rgba(234, 179, 8, 0.5); }
+        .badge-high { background: rgba(239, 68, 68, 0.2); color: #ef4444; border: 1px solid rgba(239, 68, 68, 0.5); }
+
+        .code-block {
+            background: #020617;
+            padding: 1.5rem;
+            border-radius: 0.5rem;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            font-family: 'Roboto Mono', monospace;
+            overflow-x: auto;
+            margin: 1rem 0;
+            color: #a5b4fc;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <header id="header">
+        <div class="container nav-container">
+            <a href="index.html" class="logo">
+                <img src="images/kfu-cyber-logo.png" alt="KFU Cyber Logo">
+                <div class="logo-text">
+                    <span class="logo-title">TUWAIQ</span>
+                    <span class="logo-subtitle">CYBERSECURITY</span>
+                </div>
+            </a>
+
+            <button class="mobile-toggle" id="mobileToggle">
+                <i data-lucide="menu"></i>
+            </button>
+
+            <nav class="nav-links" id="navLinks">
+                <a href="index.html" class="nav-link">HOME</a>
+                <a href="bootcamps.html" class="nav-link">BOOTCAMPS</a>
+                <a href="workshops.html" class="nav-link">WORKSHOPS</a>
+                <a href="team.html" class="nav-link">TEAM</a>
+                <a href="labs.html" class="nav-link active">LABS</a>
+                <a href="contact.html" class="nav-link">CONTACT</a>
+                <a href="login.html" class="btn btn-primary">
+                    <i data-lucide="terminal" style="width: 16px; margin-right: 8px;"></i>
+                    MEMBER LOGIN
+                </a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" style="min-height: 60vh;">
+        <div class="hero-bg">
+            <img src="images/hero-bg.jpg" alt="Background">
+            <div class="hero-overlay"></div>
+        </div>
+
+        <div class="container hero-content">
+            <div class="hero-badge">HANDS-ON TRAINING</div>
+
+            <h1 class="hero-title">
+                CYBER <span class="gradient-text">LABS</span>
+            </h1>
+
+            <p class="hero-subtitle">
+                Test your skills in our custom-built virtual environments. From basic network reconnaissance to advanced exploitation.
+            </p>
+        </div>
+    </section>
+
+    <!-- Instructions Section -->
+    <section class="section">
+        <div class="container">
+            <h2 class="section-title">HOW TO <span class="text-primary">START</span></h2>
+            <div class="grid-2">
+                <div>
+                    <p class="text-muted" style="margin-bottom: 1rem;">
+                        To access the labs, you need to run the Docker containers on your local machine. Ensure you have Docker and Docker Compose installed.
+                    </p>
+                    <ol style="list-style: decimal inside; color: var(--muted); display: flex; flex-direction: column; gap: 0.5rem;">
+                        <li>Clone the repository or download the challenges folder.</li>
+                        <li>Navigate to the <code>challenges</code> directory.</li>
+                        <li>Run the startup command.</li>
+                        <li>Connect to the target ports as specified in the challenge details.</li>
+                    </ol>
+                </div>
+                <div>
+                    <div class="code-block">
+# Clone the repo (if you haven't already)
+git clone <repository_url>
+cd challenges
+
+# Start all challenges
+docker-compose up -d --build
+
+# Check running services
+docker ps
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Challenges Grid -->
+    <section class="section" style="background: rgba(255, 255, 255, 0.02);">
+        <div class="container">
+            <h2 class="section-title" style="text-align: center; margin-bottom: 3rem;">ACTIVE <span class="text-accent">CHALLENGES</span></h2>
+
+            <div class="cards-grid">
+                <!-- Low Level -->
+                <div class="lab-card">
+                    <div class="lab-badge badge-low">Level 1: Low</div>
+                    <i data-lucide="shield-check" style="color: #22c55e; width: 3rem; height: 3rem; margin-bottom: 1rem;"></i>
+                    <h3 class="card-title">Network Basics</h3>
+                    <p class="text-muted" style="margin-bottom: 1rem;">
+                        A poorly configured server exposing unnecessary services. Your goal is to gain access and escalate privileges.
+                    </p>
+                    <div class="card-meta">
+                        <div class="meta-item"><i data-lucide="target" class="meta-icon"></i> <span>Ports: 2121 (FTP), 2221 (SSH)</span></div>
+                        <div class="meta-item"><i data-lucide="key" class="meta-icon"></i> <span>Flags: 2 (User, Root)</span></div>
+                    </div>
+                    <div class="card-desc">
+                        <strong>Skills:</strong> Reconnaissance, Default Credentials, Weak Permissions, Basic Privilege Escalation.
+                    </div>
+                </div>
+
+                <!-- Mid Level -->
+                <div class="lab-card">
+                    <div class="lab-badge badge-mid">Level 2: Mid</div>
+                    <i data-lucide="globe" style="color: #eab308; width: 3rem; height: 3rem; margin-bottom: 1rem;"></i>
+                    <h3 class="card-title">Web Exploitation</h3>
+                    <p class="text-muted" style="margin-bottom: 1rem;">
+                        A corporate portal with a custom login system. Rumor has it the developers skipped security reviews.
+                    </p>
+                    <div class="card-meta">
+                        <div class="meta-item"><i data-lucide="target" class="meta-icon"></i> <span>Port: 8082 (HTTP)</span></div>
+                        <div class="meta-item"><i data-lucide="key" class="meta-icon"></i> <span>Flags: 2 (DB, Root)</span></div>
+                    </div>
+                    <div class="card-desc">
+                        <strong>Skills:</strong> SQL Injection, Code Review, SUID Binary Exploitation.
+                    </div>
+                </div>
+
+                <!-- High Level -->
+                <div class="lab-card">
+                    <div class="lab-badge badge-high">Level 3: High</div>
+                    <i data-lucide="cpu" style="color: #ef4444; width: 3rem; height: 3rem; margin-bottom: 1rem;"></i>
+                    <h3 class="card-title">Advanced Ops</h3>
+                    <p class="text-muted" style="margin-bottom: 1rem;">
+                        A critical network diagnostic tool running with high privileges. It seems secure, but inputs are tricky.
+                    </p>
+                    <div class="card-meta">
+                        <div class="meta-item"><i data-lucide="target" class="meta-icon"></i> <span>Port: 8083 (HTTP)</span></div>
+                        <div class="meta-item"><i data-lucide="key" class="meta-icon"></i> <span>Flags: 2 (User, Root)</span></div>
+                    </div>
+                    <div class="card-desc">
+                        <strong>Skills:</strong> Command Injection, Wildcard Injection, Misconfigured Capabilities/Sudo.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container footer-grid">
+            <div>
+                <div class="logo" style="margin-bottom: 1.5rem;">
+                    <img src="images/kfu-cyber-logo.png" alt="Logo">
+                    <span class="logo-title">TUWAIQ CYBERSECURITY</span>
+                </div>
+                <p class="text-muted">
+                    Building the next generation of cybersecurity professionals through education, training, and hands-on experience at King Faisal University.
+                </p>
+            </div>
+
+            <div>
+                <h4 style="margin-bottom: 1.5rem; color: var(--primary);">Quick Links</h4>
+                <ul style="display: flex; flex-direction: column; gap: 0.75rem;">
+                    <li><a href="index.html" class="text-muted">Home</a></li>
+                    <li><a href="bootcamps.html" class="text-muted">Bootcamps</a></li>
+                    <li><a href="workshops.html" class="text-muted">Workshops</a></li>
+                    <li><a href="labs.html" class="text-primary">Labs</a></li>
+                    <li><a href="team.html" class="text-muted">Team</a></li>
+                </ul>
+            </div>
+
+            <div>
+                <h4 style="margin-bottom: 1.5rem; color: var(--primary);">Connect</h4>
+                <div style="display: flex; gap: 1rem;">
+                    <a href="#" class="btn-ghost"><i data-lucide="twitter"></i></a>
+                    <a href="#" class="btn-ghost"><i data-lucide="linkedin"></i></a>
+                    <a href="#" class="btn-ghost"><i data-lucide="instagram"></i></a>
+                </div>
+            </div>
+        </div>
+
+        <div class="container footer-bottom">
+            &copy; 2025 Tuwaiq Cybersecurity Club. All System Rights Reserved.
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script>
+        lucide.createIcons();
+    </script>
+</body>
+</html>
